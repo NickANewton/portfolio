@@ -12,16 +12,13 @@ export default function Layout() {
     { color: "bg-cyan-700", connector: [1, 1, 1, 1], text: "Contact" },
   ];
 
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   return (
-    <div className="h-[100vh] w-[100vw] flex flex-col">
+    <div className={twMerge("h-[100vh] w-[100vw] flex flex-col", theme)}>
       <header
         className={twMerge(
-          "h-28 text-white font-mono flex justify-between w-full px-6 gap-20 items-center",
-          theme === "dark"
-            ? "bg-[rgb(1,2,5)] text-[rgb(211,211,211)]"
-            : "bg-gray-400 text-black"
+          "h-28 font-mono flex justify-between w-full px-6 gap-20 items-center bg-header-primary text-header-secondary"
         )}
       >
         <div className="flex gap-20 items-center">
